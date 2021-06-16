@@ -1,0 +1,35 @@
+.create{
+    
+        text-align: center;;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 32px;
+       
+        
+        
+ 
+}
+.create .button{
+    outline: none;
+    text-decoration: none !important;
+    border: 3px solid black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-size: 35px;
+   
+    color: rgb(244, 250, 244);
+
+}
+.create .button:hover{
+    background-color: rgb(64, 62, 62);
+    color: white;
+    
+}
+@media(max-width:768px){
+    .create .button{
+        font-size: 25px;
+    }
+}

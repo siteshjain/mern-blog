@@ -1,0 +1,68 @@
+.card{
+   display: flex !important;
+   flex-direction: column !important;
+   justify-content: space-between !important;
+   border-radius: 20px !important;
+   height: 100% !important;
+   position: relative !important;
+   transition: all .25s linear;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+   width: 100%;
+   
+   background-color: #fff !important;
+   
+  
+}
+.card:hover{
+    box-shadow: -1px 10px 15px 0px rgba(0,0,0,0.8);
+}
+.card h6{
+    margin-left: 20px !important;
+}
+.overlay body2{
+    margin-left: 10px !important;
+}
+
+
+.media{
+    height:0 !important;
+    padding-top: 56.25% !important;
+    width: 100% !important;
+    height: 50px !important;
+    margin-top: 66px !important;
+}
+.overlay{
+    position: absolute !important;
+    top:'20px' !important;
+    left:"20px" !important;
+    color:black !important;
+}
+.overlay2{
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    color: black !important;
+}
+.grid{
+    display: flex !important;
+}
+.details{
+    display: flex !important;
+    justify-content: space-between !important;
+    margin: 20px !important;
+}
+.title{
+    padding: 0 16px !important;
+    align-items: center;
+}
+.cardAction{
+    padding: 0 16px 8px 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+.readMore{
+    background-color:  rgb(65, 235, 113) !important;
+}
+.readMore:hover{
+  background-color: rgb(65, 235, 113) !important;
+}
