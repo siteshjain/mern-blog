@@ -17,6 +17,7 @@ router.delete('/:id',auth,deletePost)
 
 router.patch('/:id/likePost',auth,likePost)
 
+
 router.get('/:id',auth,readPost)
 
 export default router

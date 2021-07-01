@@ -1,14 +1,17 @@
 import React from 'react'
-import {Container,AppBar,Toolbar,Typography,Grow,Grid, Avatar, Button} from '@material-ui/core'
+import {AppBar,Toolbar,Typography, Button} from '@material-ui/core'
 import {Link,useHistory,useLocation} from 'react-router-dom'
 import useStyles from './style'
 import {useDispatch} from 'react-redux';
 import { useState,useEffect } from 'react'
 import './style.css'
 import decode from 'jwt-decode';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 const Navbar = () => {
     const classes=useStyles();
     const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')))
+    const [anchorEl, setAnchorEl] = useState(null);
    const dispatch=useDispatch();
    const location=useLocation();
   
@@ -22,15 +25,25 @@ const Navbar = () => {
     }, [location])
   const history=useHistory();
     const handleLogout=()=>{
+      setAnchorEl(null);
         history.push('/')
         dispatch({type:'LOGOUT'})
        
         setUser(null);
 
     }
+
+
+  const handleClick2 = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose2 = () => {
+    setAnchorEl(null);
+  };
     
     return (
-        <AppBar className={classes.app} position="static" color="inherit" maxWidth="lg">
+        <AppBar className={classes.app} position="static" color="inherit" maxwidth="lg">
         <div className={classes.container}>
         <Typography className={classes.heading} component={Link} to='/' variant="h2" align="center">BLOG</Typography>
 
@@ -38,14 +51,24 @@ const Navbar = () => {
 
         <Toolbar className={classes.toolbar}>
           {user?.result?(
-              <div className={classes.profile} className="profile1">
-                 
-                  <Typography className={classes.userName} variant="h5"> {user.result.name}</Typography>
-                  <Button variant="contained" className={classes.logout} className="logout" color="primary" onClick={handleLogout}>Logout</Button>
-
-              </div>
+            <div>
+         <Button aria-controls="simple-menu" aria-haspopup="true" className="user_button" onClick={handleClick2}>
+         {user.result.name}
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose2}
+      >
+        <MenuItem onClick={handleClose2}>Profile</MenuItem>
+      
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+      </Menu>
+    </div>
           ):(
-              <Button component={Link} to="/signin" variant="contained" color="secondary">Sign In</Button>
+              <Button component={Link} to="/signin" variant="contained" color="white">Login/Register</Button>
           )}
 
         </Toolbar>

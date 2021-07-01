@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    background-color: #9ec3e6;
+    background-color: #2b3144;;
   }
 .heading1{
     color: rgba(0,183,255, 1);
@@ -18,6 +18,10 @@
     justify-content: flex-end;
     width: 400px;
   }
+  .user_button{
+    font-size: 1.5rem !important;
+  }
+ 
 .profile1 {
     display: flex;
     justify-content: space-between;

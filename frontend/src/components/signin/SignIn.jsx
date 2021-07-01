@@ -1,4 +1,4 @@
-import { Avatar, Container, Grid, Paper, TextField, Typography,Button } from '@material-ui/core';
+import { Avatar, Container, Grid, Paper, Typography,Button } from '@material-ui/core';
 // import {Google} from 'react-google-login'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import React, { useState } from 'react'
@@ -7,6 +7,7 @@ import useStyles from './style'
 import {signin,signup} from '../../actions/signin';
 import {useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom';
+import Navbar from '../navbar/Navbar';
 const initialState = { name: '',  email: '', password: '', confirmPassword: '' };
 const SignIn = () => {
     const [showPassword,setPassword]=useState(false)
@@ -48,7 +49,9 @@ const SignIn = () => {
    
     
     return (
+       
         <Container component="main" maxWidth="xs">
+         
             <Paper className={classes.paper} elevation={3}>
                 <Avatar className={classes.avatar}><LockOutlinedIcon/></Avatar>
                 <Typography variant="h5">{isSign?'Sign Up':'Sign In'}</Typography>
@@ -68,10 +71,10 @@ const SignIn = () => {
                         {isSign && <AllList name="confirmPassword" label="Confirm Password" handleChange={handleChange} type="password" ></AllList>}
                     </Grid>
                    
-                    <Button type="submit"  variant="contained" color="primary" className={classes.submit} >{isSign?'Sign Up':'Sign In'}</Button>
+                    <Button type="submit"  variant="contained" fullWidth color="primary" className={classes.submit} >{isSign?'Sign Up':'Sign In'}</Button>
                     <Grid container justify="flex-end">
                     <Grid item>
-                        <Button onClick={switchButton}>{isSign?'Already have an account?Sign-In':"New customer? Create your account"} </Button>
+                        <Button onClick={switchButton} variant="body2" color="primary" >{isSign?'Already have an account?Sign-In': "Don't have an account? Sign Up"} </Button>
                     </Grid>
 
                     </Grid>

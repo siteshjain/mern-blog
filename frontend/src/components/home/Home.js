@@ -3,17 +3,17 @@ import './style.css'
 import {Link} from 'react-router-dom'
 import Posts from '../Posts/Posts'
 
-import {Container,AppBar,Typography,Grow,Grid} from '@material-ui/core'
-import useStyles from './styles'
+import {Container,Grow,Grid} from '@material-ui/core'
+
 import Navbar from '../navbar/Navbar'
 import {Button} from '@material-ui/core'
 
 const Home=({ currentId,setCurrentId })=>{
-    const classes=useStyles();
+   
     const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')))
     return (
         <>
-        <Container maxWidth="lg">
+        <Container maxwidth="lg">
           <Navbar></Navbar>
           <div className="create">
           {

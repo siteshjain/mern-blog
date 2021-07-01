@@ -62,6 +62,7 @@ export const likePost=(id)=>async(dispatch)=>{
     
 }
 
+
 export const readPost=(id)=>async(dispatch)=>{
     try{
         const {data}=await api.readPost(id);

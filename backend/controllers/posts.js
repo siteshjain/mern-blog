@@ -72,6 +72,8 @@ export const likePost=async(req,res)=>{
     res.json(update)
 }
 
+
+
 export const readPost=async(req,res)=>{
     const {id}=req.params;
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('no post with that id');

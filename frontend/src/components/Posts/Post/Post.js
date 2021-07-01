@@ -42,7 +42,8 @@ const Post =({ post,currentId,setCurrentId })=>{
     }
 
     return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
-  };
+  }; 
+  
   
 
     return (
@@ -57,7 +58,7 @@ const Post =({ post,currentId,setCurrentId })=>{
             {
                 (user?.result?._id===post?.creator)&&
                 <div className={classes.overlay2} >
-                <Button style={{color:'white'}} size="small" onClick={editBlog}><MoreHorizIcon fontSize="default"></MoreHorizIcon></Button>
+                <Button style={{color:'black'}} size="small" onClick={editBlog}><MoreHorizIcon fontSize="default"></MoreHorizIcon></Button>
                  </div>
             }
           
@@ -71,6 +72,7 @@ const Post =({ post,currentId,setCurrentId })=>{
               <Button size="small" color="primary" disabled={!user?.result} onClick={()=>{dispatch(likePost(post._id))}}>
                   <Likes/>
               </Button>
+             
               {(user?.result?._id===post?.creator)&&
                 <Button size="small" color="primary" className={classes.delete} onClick={()=>dispatch(deletePost(post._id))}><DeleteIcon fontSize="small"></DeleteIcon>Delete</Button>
                  

@@ -4,5 +4,6 @@ export const UPDATE='UPDATE';
 export const FETCH_ALL='FETCH_ALL';
 export const READ='READ';
 export const LIKE='LIKE';
+export const DISLIKE='LIKE';
 export const AUTH='AUTH';
 export const LOGOUT='LOGOUT'
