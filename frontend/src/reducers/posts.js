@@ -1,9 +1,10 @@
-import {FETCH_ALL,DELETE,CREATE,UPDATE} from '../constant/actionTypes'
+import {FETCH_ALL,DELETE,CREATE,UPDATE,COMMENT} from '../constant/actionTypes'
 
 export default (posts=[],action)=>{
     switch(action.type){
         case FETCH_ALL:
             return action.payload;
+            
         case CREATE:
             return [...posts,action.payload];
         case UPDATE:
@@ -14,6 +15,8 @@ export default (posts=[],action)=>{
             return posts.map((post)=>post._id===action.payload._id?action.payload:post)
       
         case 'READ':
+            return posts.map((post)=>post._id===action.payload._id?action.payload:post)
+        case COMMENT:
             return posts.map((post)=>post._id===action.payload._id?action.payload:post)
         default:
            return posts

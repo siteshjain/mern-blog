@@ -62,7 +62,7 @@ const Navbar = () => {
         open={Boolean(anchorEl)}
         onClose={handleClose2}
       >
-        <MenuItem onClick={handleClose2}>Profile</MenuItem>
+        {/* <MenuItem onClick={handleClose2}>Profile</MenuItem> */}
       
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>

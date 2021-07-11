@@ -10,3 +10,14 @@
 .list-group .creator{
   text-transform: capitalize;
 } 
+
+.outer_div{
+  /* display: flex;
+  justify-content: space-between; */
+  color: white;
+}
+.inner_div{
+  height: 20rem;
+  overflow: auto;
+  margin-right: 3rem;
+}

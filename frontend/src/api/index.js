@@ -18,6 +18,7 @@ export const deletePost=(id)=>API.delete(`/posts/${id}`)
 
 export const readPost=(id)=>API.get(`/posts/${id}`)
 export const likePost=(id)=>API.patch(`/posts/${id}/likePost`)
+export const comment=(val,id)=>API.post(`/posts/${id}/commentPost`,{val})
 
 
 export const signIn=(formData)=>API.post('/users/signin',formData)

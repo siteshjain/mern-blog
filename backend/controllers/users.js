@@ -11,7 +11,7 @@ export const signin=async(req,res)=>{
         const checkPassword=await bcrypt.compare(password,isUserExist.password);
         if(!checkPassword)return res.status(400).json({message:"Invalid Details"})
         
-        const token=jwt.sign({email:isUserExist.email,id:isUserExist._id},'secret',{expiresIn:"1h"});
+        const token=jwt.sign({email:isUserExist.email,id:isUserExist._id},'secret',{expiresIn:"3h"});
         res.status(200).json({result:isUserExist,token})
        
         
@@ -37,7 +37,7 @@ export const signup=async(req,res)=>{
 
 
         const result=await User.create({name,email,password:passwordHashed})
-        const token=jwt.sign({email:result.email,id:result._id},'secret',{expiresIn:"1h"});
+        const token=jwt.sign({email:result.email,id:result._id},'secret',{expiresIn:"3h"});
         res.status(201).json({result,token})
 
 

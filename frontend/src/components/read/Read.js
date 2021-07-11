@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
+import Comment from './Comment';
 export const Read = ({currentId,setCurrentId}) => {
   const history=useHistory();
     const post1=useSelector((state)=>currentId?state.posts.find((p)=>p._id===currentId):null)
@@ -29,6 +30,7 @@ export const Read = ({currentId,setCurrentId}) => {
               (user?.result?._id===post1?.creator)&&
               <button type="button" onClick={editPost} className="btn btn-success mt-3 ml-5 ">Edit</button>
             }
+          
      
           </div>
           <div className="col-md-8">
@@ -39,6 +41,7 @@ export const Read = ({currentId,setCurrentId}) => {
           <li className="list-group-item"><p><strong>Message: </strong>{post1.message}</p></li>
         
           </ul>
+          <Comment post1={post1}></Comment>
           </div>
         </div>
 
